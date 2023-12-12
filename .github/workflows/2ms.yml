@@ -1,0 +1,21 @@
+name: Pipeline Example With 2MS
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          # Required for 2ms to have visibility to all commit history
+          fetch-depth: 0
+
+      # ...
+
+      - name: Run 2ms Scan
+        run: docker run -v $(pwd):/repo checkmarx/2ms:2.8.1 git /repov
