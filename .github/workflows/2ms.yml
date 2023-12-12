@@ -18,4 +18,4 @@ jobs:
       # ...
 
       - name: Run 2ms Scan
-        run: docker run -v $(pwd):/repo checkmarx/2ms:2.8.1 git .
+        run: docker run -v $(pwd):/repo checkmarx/2ms:2.8.1 git wrongsecrets
