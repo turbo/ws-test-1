@@ -18,4 +18,4 @@ jobs:
       # ...
 
       - name: Run 2ms Scan
-        run: docker run -v $(pwd):/repo checkmarx/2ms:2.8.1 git repo
+        run: docker run -v $(pwd):/repo checkmarx/2ms:2.8.1 git repo --all-branches --depth 0 --report-path 2ms.sarif
